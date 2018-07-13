@@ -15,5 +15,26 @@
   "bugs": {
     "url": "https://github.com/TheRed/doukaku-node-mocha/issues"
   },
-  "homepage": "https://github.com/TheRed/doukaku-node-mocha#readme"
+  "homepage": "https://github.com/TheRed/doukaku-node-mocha#readme",
+  "engines": {
+    "node": ">=10.6"
+  },
+  "directories": {
+    "test": "test/"
+  },
+  "devDependencies": {
+    "eslint": "^5.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-mocha": "^5.1.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^5.0.4",
+    "power-assert": "^1.4.4",
+    "prettier": "^1.11.1"
+  },
+  "dependencies": {}
 }
