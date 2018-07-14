@@ -56,3 +56,18 @@ it('エッジブロックの判定 途中に0がある場合', () => {
   assert.deepStrictEqual(blocks[7].isEdge, false)
   assert.deepStrictEqual(blocks[8].isEdge, true)
 })
+
+it('水量の設定', () => {
+  const blocks = [
+    new doukaku.Block(3),
+    new doukaku.Block(1),
+    new doukaku.Block(2),
+    new doukaku.Block(4),
+  ]
+  doukaku.setEdges(blocks)
+  doukaku.setWaters(blocks)
+  assert.deepStrictEqual(blocks[0].water, 0)
+  assert.deepStrictEqual(blocks[1].water, 2)
+  assert.deepStrictEqual(blocks[2].water, 1)
+  assert.deepStrictEqual(blocks[3].water, 0)
+})
