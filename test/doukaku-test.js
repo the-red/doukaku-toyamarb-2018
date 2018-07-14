@@ -58,9 +58,20 @@ it('レジがxの会計をする', () => {
   register2.pop()
   assert.deepStrictEqual(register2.queue, 4)
 })
-// it('hoge抽出', () => {
-//   assert.deepStrictEqual(doukaku.pluckHoge('123'), ['1', '2', '3'])
-// })
+it('出力結果のフォーマット', () => {
+  const Register = doukaku.Register
+  const registers = [
+    new Register(1, 2),
+    new Register(2, 7),
+    new Register(3, 3),
+    new Register(4, 5),
+    new Register(5, 2),
+  ]
+  assert.deepStrictEqual(doukaku.pluckOutputString(registers), '0,0,0,0,0')
+  registers[0].push(5)
+  registers[1].push('x')
+  assert.deepStrictEqual(doukaku.pluckOutputString(registers), '5,1,0,0,0')
+})
 // it('fuga判定', () => {
 //   assert.deepStrictEqual(doukaku.isFuga('1'), true)
 //   assert.deepStrictEqual(doukaku.isFuga(doukaku.pluckHoge('123')), true)
