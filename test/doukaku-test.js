@@ -72,27 +72,3 @@ it('出力結果のフォーマット', () => {
   registers[1].push('x')
   assert.deepStrictEqual(doukaku.pluckOutputString(registers), '5,1,0,0,0')
 })
-// it('fuga判定', () => {
-//   assert.deepStrictEqual(doukaku.isFuga('1'), true)
-//   assert.deepStrictEqual(doukaku.isFuga(doukaku.pluckHoge('123')), true)
-//   assert.deepStrictEqual(doukaku.isFuga(doukaku.pluckHoge('234')), false)
-// })
-// it('piyo判定', () => {
-//   assert.deepStrictEqual(doukaku.isPiyo('2'), true)
-//   assert.deepStrictEqual(doukaku.isPiyo(doukaku.pluckHoge('123')), false)
-//   assert.deepStrictEqual(doukaku.isPiyo(doukaku.pluckHoge('234')), true)
-// })
-// it('hoge fuga piyo判定', () => {
-//   assert.deepStrictEqual(
-//     doukaku.judgeFugaPiyo(doukaku.pluckHoge('345')),
-//     'hoge'
-//   )
-//   assert.deepStrictEqual(
-//     doukaku.judgeFugaPiyo(doukaku.pluckHoge('123')),
-//     'fuga'
-//   )
-//   assert.deepStrictEqual(
-//     doukaku.judgeFugaPiyo(doukaku.pluckHoge('234')),
-//     'piyo'
-//   )
-// })
