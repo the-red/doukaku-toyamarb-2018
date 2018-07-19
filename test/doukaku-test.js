@@ -29,24 +29,51 @@ it('水の合計算出', () => {
 it('エッジブロックの判定', () => {
   const blocks = doukaku.createBlocks('3124')
   doukaku.setEdges(blocks)
-  assert.deepStrictEqual(blocks[0].isEdge, true)
-  assert.deepStrictEqual(blocks[1].isEdge, false)
-  assert.deepStrictEqual(blocks[2].isEdge, false)
-  assert.deepStrictEqual(blocks[3].isEdge, true)
+  assert.deepStrictEqual(blocks.map(b => b.isEdge), [true, false, false, true])
 })
 
 it('エッジブロックの判定 途中に0がある場合', () => {
   const blocks = doukaku.createBlocks('903111128')
   doukaku.setEdges(blocks)
-  assert.deepStrictEqual(blocks[0].isEdge, true)
-  assert.deepStrictEqual(blocks[1].isEdge, true)
-  assert.deepStrictEqual(blocks[2].isEdge, true)
-  assert.deepStrictEqual(blocks[3].isEdge, false)
-  assert.deepStrictEqual(blocks[4].isEdge, false)
-  assert.deepStrictEqual(blocks[5].isEdge, false)
-  assert.deepStrictEqual(blocks[6].isEdge, false)
-  assert.deepStrictEqual(blocks[7].isEdge, false)
-  assert.deepStrictEqual(blocks[8].isEdge, true)
+  assert.deepStrictEqual(blocks.map(b => b.isEdge), [
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+  ])
+
+  const blocks2 = doukaku.createBlocks('83141310145169154671122')
+  doukaku.setEdges(blocks2)
+  assert.deepStrictEqual(blocks2.map(b => b.isEdge), [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+  ])
 })
 
 it('水量の設定', () => {
