@@ -5,13 +5,20 @@ it('ブロックインスタンスの作成', () => {
   assert.deepStrictEqual(block.height, 5)
 })
 
-it('水の合計算出', () => {
-  const blocks = [
+it('ブロック配列の初期化', () => {
+  const input = '3124'
+  const blocks = doukaku.createBlocks(input)
+  const correctBlocks = [
     new doukaku.Block(3),
     new doukaku.Block(1),
     new doukaku.Block(2),
     new doukaku.Block(4),
   ]
+  assert.deepStrictEqual(blocks, correctBlocks)
+})
+
+it('水の合計算出', () => {
+  const blocks = doukaku.createBlocks('3124')
   blocks[0].water = 0
   blocks[1].water = 2
   blocks[2].water = 1
@@ -20,12 +27,7 @@ it('水の合計算出', () => {
 })
 
 it('エッジブロックの判定', () => {
-  const blocks = [
-    new doukaku.Block(3),
-    new doukaku.Block(1),
-    new doukaku.Block(2),
-    new doukaku.Block(4),
-  ]
+  const blocks = doukaku.createBlocks('3124')
   doukaku.setEdges(blocks)
   assert.deepStrictEqual(blocks[0].isEdge, true)
   assert.deepStrictEqual(blocks[1].isEdge, false)
@@ -34,17 +36,7 @@ it('エッジブロックの判定', () => {
 })
 
 it('エッジブロックの判定 途中に0がある場合', () => {
-  const blocks = [
-    new doukaku.Block(9),
-    new doukaku.Block(0),
-    new doukaku.Block(3),
-    new doukaku.Block(1),
-    new doukaku.Block(1),
-    new doukaku.Block(1),
-    new doukaku.Block(1),
-    new doukaku.Block(2),
-    new doukaku.Block(8),
-  ]
+  const blocks = doukaku.createBlocks('903111128')
   doukaku.setEdges(blocks)
   assert.deepStrictEqual(blocks[0].isEdge, true)
   assert.deepStrictEqual(blocks[1].isEdge, true)
@@ -58,12 +50,7 @@ it('エッジブロックの判定 途中に0がある場合', () => {
 })
 
 it('水量の設定', () => {
-  const blocks = [
-    new doukaku.Block(3),
-    new doukaku.Block(1),
-    new doukaku.Block(2),
-    new doukaku.Block(4),
-  ]
+  const blocks = doukaku.createBlocks('3124')
   doukaku.setEdges(blocks)
   doukaku.setWaters(blocks)
   assert.deepStrictEqual(blocks[0].water, 0)
