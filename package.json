@@ -1,0 +1,31 @@
+{
+  "main": "src/",
+  "bin": "cli.js",
+  "scripts": {
+    "test": "mocha",
+    "format": "prettier --write \"{lib,test}/**/*.{js,json}\" \"*.{js,json}\"",
+    "lint": "eslint --fix \"{lib,test}/**/*.js\" \"*.js\""
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.2"
+  },
+  "directories": {
+    "test": "test/"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-mocha": "^6.3.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^7.1.2",
+    "power-assert": "^1.6.1",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {}
+}
