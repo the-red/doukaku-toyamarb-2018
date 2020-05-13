@@ -1,36 +1,10 @@
-# doukaku-template-node-mocha
+# doukaku-toyamarb-2018
 
-「オフラインリアルタイムどう書く」を Node.js & Mocha & power-assert 使って TDD で解くための環境です。
+「オフラインリアルタイムどう書く」の過去問をToyama.rbで解いたときのコード
 
-## 使い方
+ブランチで分けています。
 
-このGitHubリポジトリがテンプレートになっているので、  
-「Use this template」ボタンをクリックして新リポジトリをまず作成。  
-それをcloneして使ってください。
-
-## 構成
-
-- `src/`
-  - ロジックを書く
-  - すべての引数を `index.js/main` の仮引数 `argv[]` で配列として受け取る
-  - 新しく関数を作ってテスト対象にしたい場合は、 `module.exports` すること
-- `test/`
-  - テストを書く
-  - アセットライブラリは [power-assert](https://github.com/power-assert-js/power-assert)
-- `cli.js`
-  - コマンドラインからの実行用
-  - このコードは全く編集しなくて OK
-
-## 実行方法
-
-CLI
-
-```
-$ node cli.js 123
-```
-
-テスト
-
-```
-$ yarn test
-```
+- master: テンプレート
+- poker: 事前に練習で解いた問題 [ポーカー](https://qiita.com/Nabetani/items/cbc3af152ee3f50a822f)
+- toyamarb-1: Toyama.rbで解いた一問目 [フォークじゃない](http://nabetani.sakura.ne.jp/hena/ord18notfork/)
+- toyamarb-2: Toyama.rbで解いた二問目 [積み木の水槽](http://nabetani.sakura.ne.jp/hena/ord13blocktup/)
